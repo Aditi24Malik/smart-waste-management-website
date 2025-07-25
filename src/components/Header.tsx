@@ -29,7 +29,7 @@ const Header: React.FC = () => {
                 <path d="M8 10V8a4 4 0 0 1 8 0v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
-            <span className="logo-text">SmartWaste Pro</span>
+            <span className="logo-text">WasteEasy</span>
           </div>
 
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
@@ -9,6 +10,8 @@ import ReportIssue from "./pages/ReportIssue";
 import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
 import "./styles/global.css";
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 const queryClient = new QueryClient();
 
@@ -24,6 +27,8 @@ const App = () => (
         <Route path="/report-issue" element={<ReportIssue />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/login" element={<Login />}/>
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </BrowserRouter>
   </QueryClientProvider>

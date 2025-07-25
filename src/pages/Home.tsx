@@ -43,13 +43,38 @@ const Home: React.FC = () => {
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
-        <div className="container">
-          <div className="hero-content">
-            <div className="hero-text">
-              <h1 className="hero-title">
-                Smart Waste Management
-                <span className="hero-accent">Made Simple</span>
-              </h1>
+  <div className="container">
+    <div
+  className="auth-buttons"
+  style={{
+    display: 'flex',
+    justifyContent: 'flex-end',
+    gap: '1rem',
+    marginBottom: '1rem'
+  }}
+>
+  <button
+    style={{ cursor: 'pointer' }}
+    className="btn btn-outline"
+    onClick={() => navigate('/login')}
+  >
+    Login
+  </button>
+  <button
+    style={{ cursor: 'pointer' }}
+    className="btn btn-outline"
+    onClick={() => navigate('/signup')}
+  >
+    Sign Up
+  </button>
+</div>
+
+    <div className="hero-content">
+      <div className="hero-text">
+        <h1 className="hero-title">
+          Smart Waste Management
+          <span className="hero-accent">Made Simple</span>
+        </h1>
               <p className="hero-description">
                 Join the revolution in waste management. Learn, play, and contribute to a cleaner environment through our interactive platform.
               </p>

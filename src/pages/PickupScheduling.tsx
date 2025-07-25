@@ -80,22 +80,40 @@ const PickupScheduling: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Pickup scheduled:', formData);
-    // Here you would typically send the data to your backend
-    alert('Pickup scheduled successfully! You will receive a confirmation email shortly.');
-    setFormData({
-      wasteType: '',
-      pickupDate: '',
-      pickupTime: '',
-      address: '',
-      estimatedWeight: '',
-      specialInstructions: '',
-      contactNumber: '',
-      email: ''
-    });
+    try {
+      const response = await fetch('http://localhost:5000/api/pickups/schedule', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert('Pickup scheduled successfully!');
+        setFormData({
+          wasteType: '',
+          pickupDate: '',
+          pickupTime: '',
+          address: '',
+          estimatedWeight: '',
+          specialInstructions: '',
+          contactNumber: '',
+          email: ''
+        });
+      } else {
+        alert('Error: ' + result.message);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An unexpected error occurred');
+    }
   };
+
 
   const getStatusColor = (status: string) => {
     switch (status) {

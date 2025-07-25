@@ -2,6 +2,49 @@
   min-height: 100vh;
 }
 
+.auth-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn-login,
+.btn-signup {
+  padding: 10px 24px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-login {
+  background-color: transparent;
+  border: 2px solid #4f46e5;
+  color: #4f46e5;
+}
+
+.btn-login:hover {
+  background-color: #4f46e5;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn-signup {
+  background-color: #4f46e5;
+  color: #fff;
+  border: 2px solid #4f46e5;
+}
+
+.btn-signup:hover {
+  background-color: #3730a3;
+  border-color: #3730a3;
+  box-shadow: 0 4px 12px rgba(55, 48, 163, 0.3);
+}
+
+
 /* Professional Hero Section */
 .hero {
   background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 50%, var(--primary-green) 100%);
